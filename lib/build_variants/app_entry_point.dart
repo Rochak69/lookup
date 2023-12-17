@@ -6,7 +6,7 @@ import 'package:lookup/core/config/app_bloc.dart';
 
 import 'package:lookup/core/config/app_config.dart';
 import 'package:lookup/core/injection/dependency_injection.dart';
-import 'package:lookup/features/app/view/app.dart';
+import 'package:lookup/features/app/app.dart';
 
 class AppEntryPoint {
   AppEntryPoint(AppConfiguration buildVariant) {
@@ -24,6 +24,6 @@ class AppEntryPoint {
 
     Bloc.observer = const AppBlocObserver();
     await configureDependencies();
-    runApp(const App());
+    runApp(App());
   }
 }
