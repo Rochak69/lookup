@@ -18,4 +18,12 @@ class AppImages {
   static const String messages = 'assets/images/messages.png';
   static const String newPost = 'assets/images/new_post.png';
   static const String search = 'assets/images/search.png';
+  static const String gmail = 'assets/images/gmail.png';
+  static const String facebook = 'assets/images/facebook.png';
+  static const String xPng = 'assets/images/x.png';
+  static const String gloves = 'assets/images/gloves.png';
+  static const String like = 'assets/images/like.png';
+  static const String comment = 'assets/images/comment.png';
+  static const String share = 'assets/images/share.png';
+  static const String lookupPrivate = 'assets/images/lookup_private.png';
 }

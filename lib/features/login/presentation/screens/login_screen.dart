@@ -60,10 +60,9 @@ class _LoginScreenState extends State<LoginScreen> {
             UiHelper.showloaderdialog(context);
           } else if (state.theStates == TheStates.error) {
             Navigator.pop(context);
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(state.errorMessage ?? ''),
-              ),
+            UiHelper.showSnackbar(
+              context,
+              message: state.errorMessage,
             );
           }
         },
@@ -199,6 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _loginWithCredential(BuildContext context) {
     if (_formKey.currentState!.validate()) {
+      UiHelper.dissmissKeyboard(context);
       BlocProvider.of<LoginBloc>(context).add(
         CredentialLoginEvent(
           email: emailController.text,
@@ -210,6 +210,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _signUpWithCredential(BuildContext context) {
     if (_formKey.currentState!.validate()) {
+      UiHelper.dissmissKeyboard(context);
       BlocProvider.of<LoginBloc>(context).add(
         SignUpWthCredentialEvent(
           email: emailController.text,

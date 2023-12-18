@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lookup/core/config/app_bloc.dart';
 
 import 'package:lookup/core/config/app_config.dart';
+import 'package:lookup/core/hive/hive_manager.dart';
 import 'package:lookup/core/injection/dependency_injection.dart';
 import 'package:lookup/core/logger/pretty_logger.dart';
 import 'package:lookup/features/app/app.dart';
@@ -33,6 +34,7 @@ class AppEntryPoint {
       options: DefaultFirebaseOptions.currentPlatform,
     );
     await configureDependencies();
+    await sl<HiveManager>().init();
     runApp(App());
   }
 }

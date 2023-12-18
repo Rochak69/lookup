@@ -15,7 +15,7 @@ class LoginState extends Equatable {
 
   LoginState copyWith({
     TheStates? theStates,
-    String errorMessage = 'Error',
+    String errorMessage = AppConstants.errorMessage,
     bool? isTypingPassword,
     UserrEntity? user,
   }) {

@@ -24,7 +24,7 @@ class LoginHeader extends StatelessWidget {
                 height: 34.h,
               ),
               secondChild: Image.asset(
-                AppImages.lookupWhite,
+                AppImages.lookupPrivate,
                 height: 34.h,
               ),
               crossFadeState: state.isTypingPassword

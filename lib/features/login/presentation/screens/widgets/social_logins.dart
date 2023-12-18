@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookup/features/common/widgets/horizontal_spacing.dart';
+import 'package:lookup/res/index.dart';
 
 class SocialLogins extends StatelessWidget {
   const SocialLogins({super.key, this.onTap});
@@ -14,27 +15,45 @@ class SocialLogins extends StatelessWidget {
         InkWell(
           onTap: onTap,
           child: Card(
+            color: AppColors.white,
+            surfaceTintColor: AppColors.white,
             elevation: 8,
-            child: Icon(
-              Icons.mail,
-              size: 28.sp,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
+              child: Image.asset(
+                AppImages.gmail,
+                width: 28.w,
+                height: 20.h,
+              ),
             ),
           ),
         ),
         HorizontalSpacing(16.w),
         Card(
+          color: AppColors.white,
+          surfaceTintColor: AppColors.white,
           elevation: 8,
-          child: Icon(
-            Icons.mail,
-            size: 28.sp,
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
+            child: Image.asset(
+              AppImages.facebook,
+              width: 28.w,
+              height: 20.h,
+            ),
           ),
         ),
         HorizontalSpacing(16.w),
         Card(
+          color: AppColors.white,
+          surfaceTintColor: AppColors.white,
           elevation: 8,
-          child: Icon(
-            Icons.mail,
-            size: 28.sp,
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 6.w),
+            child: Image.asset(
+              AppImages.xPng,
+              width: 28.w,
+              height: 20.h,
+            ),
           ),
         ),
       ],

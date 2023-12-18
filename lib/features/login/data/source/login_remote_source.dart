@@ -3,6 +3,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lookup/core/usecase/usecase.dart';
 import 'package:lookup/features/login/data/model/user_model.dart';
+import 'package:lookup/res/app_constants.dart';
 
 @lazySingleton
 class LoginRemoteSource {
@@ -10,7 +11,7 @@ class LoginRemoteSource {
     final googleSignIn = GoogleSignIn();
     final response = await googleSignIn.signIn();
     if (response?.email == null) {
-      throw InternalAppError(errorMessage: 'Error');
+      throw InternalAppError(errorMessage: AppConstants.errorMessage);
     }
     final authentication = await response?.authentication;
 

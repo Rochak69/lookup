@@ -9,6 +9,7 @@ import 'package:lookup/features/login/domain/entity/user_entity.dart';
 import 'package:lookup/features/login/domain/usecase/credential_login_usecase.dart';
 import 'package:lookup/features/login/domain/usecase/google_login_usecase.dart';
 import 'package:lookup/features/login/domain/usecase/sign_up_usecase.dart';
+import 'package:lookup/res/app_constants.dart';
 import 'package:meta/meta.dart';
 part 'login_event.dart';
 part 'login_state.dart';

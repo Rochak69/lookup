@@ -1,3 +1,3 @@
 class AppHiveBox {
-  static const String like = 'likes';
+  static const String likeShareCount = 'likes';
 }

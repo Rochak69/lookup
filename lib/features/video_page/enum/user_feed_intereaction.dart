@@ -1,0 +1,1 @@
+enum UserFeedIntereaction { like, share }

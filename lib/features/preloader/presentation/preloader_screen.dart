@@ -74,7 +74,7 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
                                 Expanded(
                                   child: Center(
                                     child: Text(
-                                      'welcome ${state.user?.name ?? ''}',
+                                      'welcome ${state.user?.name ?? 'User'}',
                                       style: TextStyle(
                                         fontSize: 32.sp,
                                         color: AppColors.white,

@@ -5,6 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lookup/enum/the_states.dart';
 import 'package:lookup/features/login/domain/entity/user_entity.dart';
+import 'package:lookup/res/app_constants.dart';
 
 part 'app_profile_event.dart';
 part 'app_profile_state.dart';

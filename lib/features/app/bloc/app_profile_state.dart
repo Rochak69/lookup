@@ -4,7 +4,7 @@ class AppProfileState extends Equatable {
   const AppProfileState({
     this.user,
     this.theStates = TheStates.initial,
-    this.errorMessage = 'Error',
+    this.errorMessage = AppConstants.errorMessage,
   });
 
   final TheStates theStates;
@@ -17,7 +17,7 @@ class AppProfileState extends Equatable {
   AppProfileState copyWith({
     TheStates? theStates,
     UserrEntity? user,
-    String errorMessage = 'Error',
+    String errorMessage = AppConstants.errorMessage,
   }) {
     return AppProfileState(
       theStates: theStates ?? this.theStates,

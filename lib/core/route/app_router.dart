@@ -16,5 +16,8 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: HomeRoute.page,
         ),
+        AutoRoute(
+          page: VideoRoute.page,
+        ),
       ];
 }

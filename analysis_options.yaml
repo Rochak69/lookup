@@ -5,3 +5,4 @@ linter:
     one_member_abstracts: false
     prefer_if_elements_to_conditional_expressions: false
     lines_longer_than_80_chars: false
+    prefer_final_locals: false
