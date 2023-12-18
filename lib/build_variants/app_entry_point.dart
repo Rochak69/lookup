@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +21,11 @@ class AppEntryPoint {
   ) async {
     WidgetsFlutterBinding.ensureInitialized();
     FlutterError.onError = (details) {
-      PrettyLogger.logger.e(details.exceptionAsString(),
-          stackTrace: details.stack, error: details);
+      PrettyLogger.logger.e(
+        details.exceptionAsString(),
+        stackTrace: details.stack,
+        error: details,
+      );
     };
 
     Bloc.observer = const AppBlocObserver();
