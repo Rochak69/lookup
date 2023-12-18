@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookup/core/route/app_router.gr.dart';
+import 'package:lookup/features/app/bloc/app_profile_bloc.dart';
 import 'package:lookup/features/common/clipper/top_upward_curve_clipper.dart';
 import 'package:lookup/features/common/widgets/app_scaffold.dart';
 import 'package:lookup/features/common/widgets/vertical_spacing.dart';
@@ -65,12 +67,25 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
                             fontWeight: FontWeight.w500,
                           ),
                         )
-                      : Text(
-                          'welcome Abhas',
-                          style: TextStyle(
-                            fontSize: 32.sp,
-                            color: AppColors.white,
-                          ),
+                      : BlocBuilder<AppProfileBloc, AppProfileState>(
+                          builder: (context, state) {
+                            return Row(
+                              children: [
+                                Expanded(
+                                  child: Center(
+                                    child: Text(
+                                      'welcome ${state.user?.name ?? ''}',
+                                      style: TextStyle(
+                                        fontSize: 32.sp,
+                                        color: AppColors.white,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
                         )
                           .animate(delay: const Duration(milliseconds: 1000))
                           .fadeIn(),
@@ -155,7 +170,6 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
                           ),
                         ],
                       ),
-                      VerticalSpacing(20.h),
                     ],
                   ),
                 ),

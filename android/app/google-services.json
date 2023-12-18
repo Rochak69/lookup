@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "518786681409",
+    "project_id": "lookup-a02aa",
+    "storage_bucket": "lookup-a02aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518786681409:android:0493d7a76bfe7a87c654c0",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.lookup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518786681409-8b4p9mlhe08ls9aaggvmhd1m83hn58uo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXtj0DfGgedbWHBZXzMnwgxPbBeg9m4q8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518786681409-8b4p9mlhe08ls9aaggvmhd1m83hn58uo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "518786681409-jdvmeik8lisrruj5i8r60hb8ecrrmu1j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.verygoodcore.lookup"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

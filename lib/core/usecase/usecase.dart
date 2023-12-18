@@ -25,6 +25,6 @@ class NoInternetError extends AppError {
   NoInternetError({required super.errorMessage});
 }
 
-class GraphErrorMessage extends AppError {
-  GraphErrorMessage({required super.errorMessage});
+class ApiError extends AppError {
+  ApiError({required super.errorMessage});
 }

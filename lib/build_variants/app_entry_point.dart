@@ -1,12 +1,15 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lookup/core/config/app_bloc.dart';
 
 import 'package:lookup/core/config/app_config.dart';
 import 'package:lookup/core/injection/dependency_injection.dart';
+import 'package:lookup/core/logger/pretty_logger.dart';
 import 'package:lookup/features/app/app.dart';
+import 'package:lookup/firebase_options.dart';
 
 class AppEntryPoint {
   AppEntryPoint(AppConfiguration buildVariant) {
@@ -18,11 +21,16 @@ class AppEntryPoint {
   Future<void> initializeStartUpDependenciesAndRun(
     AppConfiguration? envSettings,
   ) async {
+    WidgetsFlutterBinding.ensureInitialized();
     FlutterError.onError = (details) {
-      log(details.exceptionAsString(), stackTrace: details.stack);
+      PrettyLogger.logger.e(details.exceptionAsString(),
+          stackTrace: details.stack, error: details);
     };
 
     Bloc.observer = const AppBlocObserver();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
     await configureDependencies();
     runApp(App());
   }

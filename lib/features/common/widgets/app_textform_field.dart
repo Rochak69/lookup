@@ -17,6 +17,9 @@ class AppTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.isReadOnly = false,
     this.textInputAction,
+    this.onChanged,
+    this.onEditingComplete,
+    this.onTapOutside,
   });
   final String? label;
   final String? Function(String?)? validator;
@@ -30,6 +33,9 @@ class AppTextFormField extends StatelessWidget {
   final bool isReadOnly;
   final String title;
   final TextInputAction? textInputAction;
+  final void Function(String)? onChanged;
+  final void Function()? onEditingComplete;
+  final void Function(PointerDownEvent)? onTapOutside;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +51,9 @@ class AppTextFormField extends StatelessWidget {
           obscureText: obscureText,
           validator: validator,
           keyboardType: textInputType,
+          onChanged: onChanged,
+          onTapOutside: onTapOutside,
+          onEditingComplete: onEditingComplete,
           controller: textEditingController,
           textInputAction: textInputAction,
           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -57,8 +66,12 @@ class AppTextFormField extends StatelessWidget {
             focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: AppColors.white),
             ),
+            errorBorder: const UnderlineInputBorder(
+              borderSide: BorderSide(color: AppColors.yellow),
+            ),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
+            errorStyle: const TextStyle(color: AppColors.yellow),
           ),
         ),
       ],

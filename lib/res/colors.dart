@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color darkPrimary = Color(0xff5964FF);
   static const Color white = Colors.white;
   static const Color textGrey = Color(0xff6E6B6B);
   static const Color textfieldHintGrey = Color(0xffC3BFBF);
   static const Color homeTextGrey = Color(0xffA6A3A3);
   static const Color buttonShadow = Color.fromRGBO(0, 0, 0, 0.25);
   static const Color black = Color(0xff000000);
+  static const Color yellow = Colors.yellow;
 
   static MaterialColor gray = const MaterialColor(
     0xff475467,
