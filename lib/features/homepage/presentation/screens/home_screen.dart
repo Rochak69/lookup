@@ -50,10 +50,8 @@ class HomeScreen extends StatelessWidget {
                 child: ListView.separated(
                   padding: EdgeInsets.only(bottom: 100.h),
                   itemCount: feedList.length,
-                  itemBuilder: (context, index) => FeedCard(
-                    title: feedList[index],
-                    image: feedImages[index],
-                  ),
+                  itemBuilder: (context, index) =>
+                      FeedCard(feed: feedList[index]),
                   separatorBuilder: (context, index) => VerticalSpacing(18.h),
                 ),
               ),

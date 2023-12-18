@@ -4,25 +4,31 @@ import 'package:hive/hive.dart';
 import 'package:lookup/core/hive/app_hive_type_id.dart';
 import 'package:lookup/res/index.dart';
 
-List<String> feedList = [
-  'Stories',
-  'Trending',
-  'Best Working',
-  'Dancing',
-  'Dancing',
-  'Dancing',
+List<HomeFeed> feedList = [
+  HomeFeed(feedName: 'Stories'),
+  HomeFeed(feedName: 'Trending'),
+  HomeFeed(feedName: 'Best Working'),
+  HomeFeed(feedName: 'Dancing'),
+  HomeFeed(feedName: 'Dancing'),
+  HomeFeed(feedName: 'Dancing'),
 ];
-List<String> feedImages = [
-  AppImages.feedTwo,
-  AppImages.feedTwo,
-  AppImages.feedThree,
-  AppImages.feedTwo,
-  AppImages.feedTwo,
-  AppImages.feedThree,
-  AppImages.feedTwo,
-  AppImages.feedTwo,
-  AppImages.feedThree,
-];
+
+class HomeFeed {
+  HomeFeed({required this.feedName});
+
+  final String feedName;
+  List<FeedModel> homeFeeds = [
+    FeedModel(0, AppImages.feedTwo),
+    FeedModel(1, AppImages.feedThree),
+    FeedModel(2, AppImages.feedTwo),
+    FeedModel(3, AppImages.feedThree),
+    FeedModel(4, AppImages.feedTwo),
+    FeedModel(5, AppImages.feedThree),
+    FeedModel(6, AppImages.feedTwo),
+    FeedModel(7, AppImages.feedThree),
+    FeedModel(8, AppImages.feedTwo),
+  ];
+}
 
 @HiveType(typeId: AppHiveTypeId.feed)
 class FeedModel {
@@ -33,12 +39,12 @@ class FeedModel {
 
   factory FeedModel.fromMap(Map<String, dynamic> map) {
     return FeedModel(
-      map['id'] as String,
+      map['id'] as int,
       map['image'] as String,
     );
   }
   @HiveField(0)
-  final String id;
+  final int id;
   @HiveField(1)
   final String image;
 
