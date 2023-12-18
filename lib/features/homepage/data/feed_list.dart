@@ -17,7 +17,7 @@ class HomeFeed {
   HomeFeed({required this.feedName});
 
   final String feedName;
-  List<FeedModel> homeFeeds = [
+  final List<FeedModel> homeFeeds = [
     FeedModel(0, AppImages.feedTwo),
     FeedModel(1, AppImages.feedThree),
     FeedModel(2, AppImages.feedTwo),
