@@ -22,7 +22,29 @@ $ flutter run --flavor production --target lib/main_production.dart
 
 # Build APK
 *To build apk replace the "run" on above commands with build apk
+```
+
 
 _\*Lookup works on iOS, Android.
 
----
+## Note
+- This project follows clean architecture
+- Clean architecture: https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/ , https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+
+- This project uses very_good_analysis for lints
+
+## Completed tasks
+All of the assesment tasks has been completed including the optional tasks
+- Responsiveness
+- Statemanagent with Bloc
+- Splash Screen with animations
+- Login Screen with animations
+- Google sign in functionality
+- Sign up/ login user with firebase_auth
+- Preloader screen with animations
+- Home screen 
+- Video Screen with like/share feature using offline storage (HIVE)
+
+## Additional 
+- Dependency injection with get_it
+- build flavors
