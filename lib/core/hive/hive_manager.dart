@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lookup/core/hive/app_hive_box.dart';
 import 'package:lookup/features/video_page/data/model/feed_video_model.dart';
-import 'package:lookup/features/video_page/domain/entity/feed_video_entity.dart';
 
 class HiveManager {
   HiveManager._();
@@ -18,7 +17,7 @@ class HiveManager {
   }
 
   void _registerAdapters() {
-    Hive.registerAdapter(FeedVideoEntityAdapter());
+    Hive.registerAdapter(FeedVideoModelAdapter());
   }
 
   Future<void> _openBoxes() async {

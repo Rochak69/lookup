@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lookup/core/usecase/usecase.dart';
+import 'package:lookup/features/video_page/data/model/feed_video_model.dart';
 import 'package:lookup/features/video_page/data/source/feed_video_local_source.dart';
-import 'package:lookup/features/video_page/domain/entity/feed_video_entity.dart';
+
 import 'package:lookup/features/video_page/domain/repository/feed_video_repository.dart';
 import 'package:lookup/features/video_page/enum/user_feed_intereaction.dart';
 import 'package:lookup/res/index.dart';
@@ -14,7 +15,7 @@ class FeedVideoRepositoryImpl extends FeedVideoRepository {
   final FeedVideoLocalSource localSource;
 
   @override
-  Either<AppError, FeedVideoEntity?> getFeedDetails({required int feedId}) {
+  Either<AppError, FeedVideoModel?> getFeedDetails({required int feedId}) {
     try {
       return right(localSource.getFeedDetails(feedId: feedId));
     } catch (e) {
@@ -23,7 +24,7 @@ class FeedVideoRepositoryImpl extends FeedVideoRepository {
   }
 
   @override
-  Either<AppError, FeedVideoEntity?> updateFeedDetails({
+  Either<AppError, FeedVideoModel?> updateFeedDetails({
     required int feedId,
     required UserFeedIntereaction userFeedIntereaction,
   }) {

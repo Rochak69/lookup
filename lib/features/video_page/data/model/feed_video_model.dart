@@ -1,13 +1,12 @@
 import 'dart:convert';
 
-import 'package:lookup/features/video_page/domain/entity/feed_video_entity.dart';
+import 'package:hive/hive.dart';
+import 'package:lookup/core/hive/app_hive_type_id.dart';
+part 'feed_video_model.g.dart';
 
-class FeedVideoModel extends FeedVideoEntity {
-  FeedVideoModel({
-    super.feedId,
-    super.like,
-    super.share,
-  });
+@HiveType(typeId: AppHiveTypeId.likeShareCount)
+class FeedVideoModel {
+  FeedVideoModel({this.feedId, this.like, this.share});
 
   factory FeedVideoModel.fromMap(Map<String, dynamic> map) {
     return FeedVideoModel(
@@ -19,6 +18,13 @@ class FeedVideoModel extends FeedVideoEntity {
 
   factory FeedVideoModel.fromJson(String source) =>
       FeedVideoModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @HiveField(0)
+  final int? feedId;
+  @HiveField(1)
+  final int? like;
+  @HiveField(2)
+  final int? share;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{

@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'feed_video_entity.dart';
+part of 'feed_video_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class FeedVideoEntityAdapter extends TypeAdapter<FeedVideoEntity> {
+class FeedVideoModelAdapter extends TypeAdapter<FeedVideoModel> {
   @override
   final int typeId = 0;
 
   @override
-  FeedVideoEntity read(BinaryReader reader) {
+  FeedVideoModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return FeedVideoEntity(
+    return FeedVideoModel(
       feedId: fields[0] as int?,
       like: fields[1] as int?,
       share: fields[2] as int?,
@@ -24,7 +24,7 @@ class FeedVideoEntityAdapter extends TypeAdapter<FeedVideoEntity> {
   }
 
   @override
-  void write(BinaryWriter writer, FeedVideoEntity obj) {
+  void write(BinaryWriter writer, FeedVideoModel obj) {
     writer
       ..writeByte(3)
       ..writeByte(0)
@@ -41,7 +41,7 @@ class FeedVideoEntityAdapter extends TypeAdapter<FeedVideoEntity> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is FeedVideoEntityAdapter &&
+      other is FeedVideoModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

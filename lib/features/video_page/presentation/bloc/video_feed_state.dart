@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:lookup/enum/the_states.dart';
-import 'package:lookup/features/video_page/domain/entity/feed_video_entity.dart';
+import 'package:lookup/features/video_page/data/model/feed_video_model.dart';
 import 'package:lookup/res/app_constants.dart';
 
 class VideoFeedState extends Equatable {
@@ -13,12 +13,12 @@ class VideoFeedState extends Equatable {
   final TheStates theStates;
   final String? errorMessage;
 
-  final FeedVideoEntity? likeShareCount;
+  final FeedVideoModel? likeShareCount;
 
   VideoFeedState copyWith({
     TheStates? theStates,
     String errorMessage = AppConstants.errorMessage,
-    FeedVideoEntity? likeShareCount,
+    FeedVideoModel? likeShareCount,
   }) {
     return VideoFeedState(
       theStates: theStates ?? this.theStates,
