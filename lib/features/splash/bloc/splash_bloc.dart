@@ -38,24 +38,26 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
 
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupPrivate));
+    emit(state.copyWith(logo: AppImages.lookupWhite));
 
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
     emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
 
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupPrivate));
+    emit(state.copyWith(logo: AppImages.lookupWhite));
 
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
     emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
 
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupPrivate));
+    emit(state.copyWith(logo: AppImages.lookupWhite));
 
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
     emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
 
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupPrivate));
+    emit(state.copyWith(logo: AppImages.lookupWhite));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
+    emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
   }
 }

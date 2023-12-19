@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
 
     _colorAnimation = ColorTween(
-      begin: AppColors.homeTextGrey,
+      begin: AppColors.splashGreyBackground,
       end: AppColors.white,
     ).animate(_colorController);
 
