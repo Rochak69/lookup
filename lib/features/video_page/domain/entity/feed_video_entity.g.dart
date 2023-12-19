@@ -1,35 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'feed_list.dart';
+part of 'feed_video_entity.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class FeedModelAdapter extends TypeAdapter<FeedModel> {
+class LikeShareEntityAdapter extends TypeAdapter<LikeShareEntity> {
   @override
   final int typeId = 0;
 
   @override
-  FeedModel read(BinaryReader reader) {
+  LikeShareEntity read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return FeedModel(
-      fields[0] as int,
-      fields[1] as String,
+    return LikeShareEntity(
+      feedId: fields[0] as int?,
+      like: fields[1] as int?,
+      share: fields[2] as int?,
     );
   }
 
   @override
-  void write(BinaryWriter writer, FeedModel obj) {
+  void write(BinaryWriter writer, LikeShareEntity obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
-      ..write(obj.id)
+      ..write(obj.feedId)
       ..writeByte(1)
-      ..write(obj.image);
+      ..write(obj.like)
+      ..writeByte(2)
+      ..write(obj.share);
   }
 
   @override
@@ -38,7 +41,7 @@ class FeedModelAdapter extends TypeAdapter<FeedModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is FeedModelAdapter &&
+      other is LikeShareEntityAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

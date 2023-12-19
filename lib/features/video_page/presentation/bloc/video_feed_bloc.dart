@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
-import 'package:lookup/core/hive/app_hive_box.dart';
 import 'package:lookup/enum/the_states.dart';
 import 'package:lookup/features/homepage/data/feed_list.dart';
+import 'package:lookup/features/video_page/domain/usecase/get_feed_details_usecase.dart';
+import 'package:lookup/features/video_page/domain/usecase/update_feed_usecase.dart';
 import 'package:lookup/features/video_page/enum/user_feed_intereaction.dart';
 import 'package:lookup/features/video_page/presentation/bloc/video_feed_state.dart';
 
@@ -13,74 +13,65 @@ part 'video_feed_event.dart';
 
 @injectable
 class VideoFeedBloc extends Bloc<VideoFeedEvent, VideoFeedState> {
-  VideoFeedBloc() : super(const VideoFeedState()) {
+  VideoFeedBloc(this.getFeedDetailsUsecase, this.updateFeedDetailsUsecase)
+      : super(const VideoFeedState()) {
     on<LikeShareEvent>(_handleLikeUnlike);
     on<GetFeedDetails>(_getFeedDetails);
   }
+  final GetFeedDetailsUsecase getFeedDetailsUsecase;
+  final UpdateFeedDetailsUsecase updateFeedDetailsUsecase;
 
   FutureOr<void> _handleLikeUnlike(
     LikeShareEvent event,
     Emitter<VideoFeedState> emit,
   ) {
-    try {
-      emit(state.copyWith(theStates: TheStates.initial));
-      const boxName = AppHiveBox.likeShareCount;
-      final box = Hive.box<LikeShareCount?>(boxName);
-      var likeShareCount = box.get(event.feed.id);
-      if (event.userFeedIntereaction == UserFeedIntereaction.like) {
-        likeShareCount = LikeShareCount(
-          feedId: event.feed.id,
-          like: likeShareCount?.like == 1 ? 0 : 1,
-          share: likeShareCount?.share,
-        );
-      } else if (event.userFeedIntereaction == UserFeedIntereaction.share) {
-        likeShareCount = LikeShareCount(
-          feedId: event.feed.id,
-          like: likeShareCount?.like,
-          share: likeShareCount?.share == 1 ? 0 : 1,
-        );
-      }
-
-      box.put(event.feed.id, likeShareCount);
-
-      emit(
-        state.copyWith(
-          theStates: TheStates.sucess,
-          likeShareCount: likeShareCount,
-        ),
-      );
-    } catch (e) {
+    emit(state.copyWith(theStates: TheStates.initial));
+    updateFeedDetailsUsecase
+        .call(
+      UpdateFeedDetailsParam(
+        id: event.feed.id,
+        userFeedIntereaction: event.userFeedIntereaction,
+      ),
+    )
+        .fold((l) {
       emit(
         state.copyWith(
           theStates: TheStates.error,
-          errorMessage: e.toString(),
+          errorMessage: l.errorMessage,
         ),
       );
-    }
+    }, (r) {
+      emit(
+        state.copyWith(
+          theStates: TheStates.sucess,
+          likeShareCount: r,
+        ),
+      );
+    });
   }
 
   FutureOr<void> _getFeedDetails(
     GetFeedDetails event,
     Emitter<VideoFeedState> emit,
   ) {
-    try {
-      emit(state.copyWith(theStates: TheStates.initial));
-      const boxName = AppHiveBox.likeShareCount;
-      final box = Hive.box<LikeShareCount?>(boxName);
-      var likeShareCount = box.get(event.feedId);
-      emit(
-        state.copyWith(
-          theStates: TheStates.sucess,
-          likeShareCount: likeShareCount,
-        ),
-      );
-    } catch (e) {
-      emit(
-        state.copyWith(
-          theStates: TheStates.error,
-          errorMessage: e.toString(),
-        ),
-      );
-    }
+    emit(state.copyWith(theStates: TheStates.initial));
+    getFeedDetailsUsecase.call(GetFeedDetailsParam(id: event.feedId)).fold(
+      (l) {
+        emit(
+          state.copyWith(
+            theStates: TheStates.error,
+            errorMessage: l.errorMessage,
+          ),
+        );
+      },
+      (r) {
+        emit(
+          state.copyWith(
+            theStates: TheStates.sucess,
+            likeShareCount: r,
+          ),
+        );
+      },
+    );
   }
 }

@@ -67,39 +67,3 @@ class FeedModel {
 
   String toJson() => json.encode(toMap());
 }
-
-@HiveType(typeId: AppHiveTypeId.likeShareCount)
-class LikeShareCount {
-  LikeShareCount({
-    required this.feedId,
-    this.like,
-    this.share,
-  });
-
-  factory LikeShareCount.fromMap(Map<String, dynamic> map) {
-    return LikeShareCount(
-      feedId: map['feedId'] as int,
-      like: map['like'] != null ? map['like'] as int : null,
-      share: map['share'] != null ? map['share'] as int : null,
-    );
-  }
-
-  factory LikeShareCount.fromJson(String source) =>
-      LikeShareCount.fromMap(json.decode(source) as Map<String, dynamic>);
-  @HiveField(0)
-  int feedId;
-  @HiveField(1)
-  int? like;
-  @HiveField(2)
-  int? share;
-
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'feedId': feedId,
-      'like': like,
-      'share': share,
-    };
-  }
-
-  String toJson() => json.encode(toMap());
-}
