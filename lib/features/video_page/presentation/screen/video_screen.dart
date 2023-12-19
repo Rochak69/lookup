@@ -6,12 +6,10 @@ import 'package:lookup/features/common/widgets/app_scaffold.dart';
 import 'package:lookup/features/homepage/data/all_feeds_data.dart';
 import 'package:lookup/features/homepage/presentation/widgets/app_bottom_navigation.dart';
 import 'package:lookup/features/video_page/presentation/bloc/video_feed_bloc.dart';
-import 'package:lookup/features/video_page/presentation/bloc/video_feed_state.dart';
 import 'package:lookup/features/video_page/presentation/widgets/feed_caption.dart';
 import 'package:lookup/features/video_page/presentation/widgets/feed_id.dart';
 import 'package:lookup/features/video_page/presentation/widgets/feed_interaction_buttons.dart';
 import 'package:lookup/features/video_page/presentation/widgets/following_for_you_tabs.dart';
-import 'package:lookup/res/colors.dart';
 
 @RoutePage()
 class VideoScreen extends StatefulWidget {
