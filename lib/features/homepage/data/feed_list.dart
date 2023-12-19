@@ -1,10 +1,6 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
-
-import 'package:lookup/core/hive/app_hive_type_id.dart';
 import 'package:lookup/res/index.dart';
-part 'feed_list.g.dart';
 
 List<HomeFeed> feedList = [
   HomeFeed(feedName: 'Stories', homeFeeds: feeds),
@@ -40,7 +36,6 @@ class HomeFeed {
   }
 }
 
-@HiveType(typeId: AppHiveTypeId.feed)
 class FeedModel {
   FeedModel(this.id, this.image);
 
@@ -53,9 +48,9 @@ class FeedModel {
       map['image'] as String,
     );
   }
-  @HiveField(0)
+
   final int id;
-  @HiveField(1)
+
   final String image;
 
   Map<String, dynamic> toMap() {
