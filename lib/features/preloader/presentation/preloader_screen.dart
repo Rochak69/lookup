@@ -51,7 +51,7 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
               padding: EdgeInsets.only(left: 28.w, right: 16.w),
               child: Column(
                 children: [
-                  VerticalSpacing(240.h),
+                  const Spacer(),
                   Image.asset(
                     AppImages.hiPng,
                     height: 32.h,

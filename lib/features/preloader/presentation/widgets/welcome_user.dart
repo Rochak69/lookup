@@ -18,10 +18,10 @@ class WelcomeUser extends StatelessWidget {
               child: Center(
                 child: Text(
                   'welcome ${state.user?.name ?? 'User'}',
+                  maxLines: 2,
                   style: TextStyle(
                     fontSize: 32.sp,
                     color: AppColors.white,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ),
