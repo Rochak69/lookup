@@ -45,3 +45,4 @@ All of the tasks has been completed including the optional tasks
 ## Additional 
 - Dependency injection with get_it
 - build flavors
+- 120 Hz refresh rate on supported devices
