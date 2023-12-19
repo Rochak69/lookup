@@ -1,4 +1,4 @@
-import 'package:lookup/features/homepage/data/all_feeds_data.dart';
+import 'package:lookup/features/homepage/data/all_feeds_model.dart';
 import 'package:lookup/res/index.dart';
 
 List<AllFeeds> feedList = [

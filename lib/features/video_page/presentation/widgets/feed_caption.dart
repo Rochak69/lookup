@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookup/features/app/bloc/app_profile_bloc.dart';
-import 'package:lookup/features/homepage/data/all_feeds_data.dart';
+import 'package:lookup/features/homepage/data/all_feeds_model.dart';
 import 'package:lookup/res/colors.dart';
 
 class FeedCaption extends StatelessWidget {

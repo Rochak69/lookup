@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookup/core/route/app_router.gr.dart';
 import 'package:lookup/features/common/widgets/horizontal_spacing.dart';
 import 'package:lookup/features/common/widgets/vertical_spacing.dart';
-import 'package:lookup/features/homepage/data/all_feeds_data.dart';
+import 'package:lookup/features/homepage/data/all_feeds_model.dart';
 
 class FeedCard extends StatelessWidget {
   const FeedCard({required this.feed, super.key});

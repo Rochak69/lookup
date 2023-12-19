@@ -10,6 +10,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:flutter/material.dart' as _i8;
+import 'package:lookup/features/homepage/data/all_feeds_model.dart' as _i7;
 import 'package:lookup/features/homepage/presentation/screens/home_screen.dart'
     as _i1;
 import 'package:lookup/features/login/presentation/screens/login_screen.dart'
@@ -17,7 +18,6 @@ import 'package:lookup/features/login/presentation/screens/login_screen.dart'
 import 'package:lookup/features/preloader/presentation/preloader_screen.dart'
     as _i3;
 import 'package:lookup/features/splash/splash_screen.dart' as _i4;
-import 'package:lookup/features/homepage/data/all_feeds_data.dart' as _i7;
 import 'package:lookup/features/video_page/presentation/screen/video_screen.dart'
     as _i5;
 

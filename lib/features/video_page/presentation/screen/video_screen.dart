@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookup/features/common/widgets/app_scaffold.dart';
-import 'package:lookup/features/homepage/data/all_feeds_data.dart';
+import 'package:lookup/features/homepage/data/all_feeds_model.dart';
 import 'package:lookup/features/homepage/presentation/widgets/app_bottom_navigation.dart';
 import 'package:lookup/features/video_page/presentation/bloc/video_feed_bloc.dart';
 import 'package:lookup/features/video_page/presentation/widgets/feed_caption.dart';

@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:lookup/enum/the_states.dart';
-import 'package:lookup/features/homepage/data/all_feeds_data.dart';
+import 'package:lookup/features/homepage/data/all_feeds_model.dart';
 import 'package:lookup/features/video_page/data/model/feed_video_model.dart';
 import 'package:lookup/features/video_page/domain/usecase/get_feed_details_usecase.dart';
 import 'package:lookup/features/video_page/domain/usecase/update_feed_usecase.dart';
