@@ -30,37 +30,32 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     ShowLoginButton event,
     Emitter<SplashState> emit,
   ) {
-    emit(state.copyWith(showLogin: true));
+    emit(state.copyWith(showLogin: true, logo: AppImages.lookupSmileThree));
   }
 
   FutureOr<void> _startLogoChange(
     StartLogoChange event,
     Emitter<SplashState> emit,
   ) async {
-    emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
+    emit(state.copyWith(logo: AppImages.lookupClose));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhite));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    emit(state.copyWith(logo: AppImages.lookupOpenOne));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    emit(state.copyWith(logo: AppImages.lookupOpenTwo));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhite));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    emit(state.copyWith(logo: AppImages.lookupOpenThree));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    emit(state.copyWith(logo: AppImages.lookupOpenFour));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhite));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    emit(state.copyWith(logo: AppImages.lookupSmileOne));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
-
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhite));
-    await Future<dynamic>.delayed(const Duration(milliseconds: 160));
-    emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    emit(state.copyWith(logo: AppImages.lookupSmileTwo));
   }
 
   FutureOr<void> _changeLogoColor(

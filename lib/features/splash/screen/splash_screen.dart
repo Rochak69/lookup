@@ -52,6 +52,8 @@ class _SplashScreenState extends State<SplashScreen>
     });
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _preCacheAllImages();
+
       _heightAnimation = Tween<double>(
         begin: 0,
         end: MediaQuery.of(context).size.height,
@@ -70,6 +72,17 @@ class _SplashScreenState extends State<SplashScreen>
 
       _playAnimation();
     });
+  }
+
+  void _preCacheAllImages() {
+    precacheImage(const AssetImage(AppImages.lookupClose), context);
+    precacheImage(const AssetImage(AppImages.lookupOpenOne), context);
+    precacheImage(const AssetImage(AppImages.lookupOpenTwo), context);
+    precacheImage(const AssetImage(AppImages.lookupOpenThree), context);
+    precacheImage(const AssetImage(AppImages.lookupOpenFour), context);
+    precacheImage(const AssetImage(AppImages.lookupSmileOne), context);
+    precacheImage(const AssetImage(AppImages.lookupSmileTwo), context);
+    precacheImage(const AssetImage(AppImages.lookupSmileThree), context);
   }
 
   Future<void> _playAnimation() async {

@@ -26,4 +26,14 @@ class AppImages {
   static const String comment = 'assets/images/comment.png';
   static const String share = 'assets/images/share.png';
   static const String lookupPrivate = 'assets/images/lookup_private.png';
+  static const String lookupSmileOne = 'assets/images/look_up_smile_one.png';
+  static const String lookupSmileTwo = 'assets/images/look_up_smile_two.png';
+  static const String lookupSmileThree =
+      'assets/images/look_up_smile_three.png';
+  static const String lookupOpenOne = 'assets/images/look_up_open_one.png';
+  static const String lookupOpenTwo = 'assets/images/look_up_open_two.png';
+  static const String lookupOpenThree = 'assets/images/look_up_open_three.png';
+  static const String lookupOpenFour = 'assets/images/look_up_open_four.png';
+
+  static const String lookupClose = 'assets/images/look_up_close.png';
 }
