@@ -75,6 +75,7 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   void _preCacheAllImages() {
+    //Precache image so that it will load instantly when needed
     precacheImage(const AssetImage(AppImages.lookupClose), context);
     precacheImage(const AssetImage(AppImages.lookupOpenOne), context);
     precacheImage(const AssetImage(AppImages.lookupOpenTwo), context);
