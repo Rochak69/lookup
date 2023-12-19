@@ -6,6 +6,7 @@ import 'package:lookup/core/route/app_router.dart';
 import 'package:lookup/core/theme/theme.dart';
 import 'package:lookup/features/app/bloc/app_profile_bloc.dart';
 import 'package:lookup/features/login/presentation/bloc/login_bloc.dart';
+import 'package:lookup/features/splash/bloc/splash_bloc.dart';
 import 'package:lookup/features/video_page/presentation/bloc/video_feed_bloc.dart';
 import 'package:lookup/utils/ui_helper.dart';
 
@@ -25,6 +26,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider<VideoFeedBloc>(
           create: (BuildContext context) => sl<VideoFeedBloc>(),
+        ),
+        BlocProvider<SplashBloc>(
+          create: (BuildContext context) => sl<SplashBloc>(),
         ),
       ],
       child: ScreenUtilInit(

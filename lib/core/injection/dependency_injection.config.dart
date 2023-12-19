@@ -17,10 +17,11 @@ import '../../features/login/data/repository/login_repository_impl.dart'
 import '../../features/login/data/source/login_remote_source.dart' as _i9;
 import '../../features/login/domain/repository/login_repository.dart' as _i10;
 import '../../features/login/domain/usecase/credential_login_usecase.dart'
-    as _i15;
-import '../../features/login/domain/usecase/google_login_usecase.dart' as _i16;
+    as _i16;
+import '../../features/login/domain/usecase/google_login_usecase.dart' as _i17;
 import '../../features/login/domain/usecase/sign_up_usecase.dart' as _i12;
-import '../../features/login/presentation/bloc/login_bloc.dart' as _i17;
+import '../../features/login/presentation/bloc/login_bloc.dart' as _i18;
+import '../../features/splash/bloc/splash_bloc.dart' as _i13;
 import '../../features/video_page/data/repository/feed_video_repository_impl.dart'
     as _i6;
 import '../../features/video_page/data/source/feed_video_local_source.dart'
@@ -30,11 +31,11 @@ import '../../features/video_page/domain/repository/feed_video_repository.dart'
 import '../../features/video_page/domain/usecase/get_feed_details_usecase.dart'
     as _i7;
 import '../../features/video_page/domain/usecase/update_feed_usecase.dart'
-    as _i13;
-import '../../features/video_page/presentation/bloc/video_feed_bloc.dart'
     as _i14;
+import '../../features/video_page/presentation/bloc/video_feed_bloc.dart'
+    as _i15;
 import '../hive/hive_manager.dart' as _i8;
-import 'dependency_injection.dart' as _i18;
+import 'dependency_injection.dart' as _i19;
 
 extension GetItInjectableX on _i1.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -61,23 +62,24 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i11.LoginRepositoryImpl(gh<_i9.LoginRemoteSource>()));
     gh.lazySingleton<_i12.SignUpUsecase>(
         () => _i12.SignUpUsecase(gh<_i10.LoginRepository>()));
-    gh.lazySingleton<_i13.UpdateFeedDetailsUsecase>(
-        () => _i13.UpdateFeedDetailsUsecase(gh<_i5.FeedVideoRepository>()));
-    gh.factory<_i14.VideoFeedBloc>(() => _i14.VideoFeedBloc(
+    gh.factory<_i13.SplashBloc>(() => _i13.SplashBloc());
+    gh.lazySingleton<_i14.UpdateFeedDetailsUsecase>(
+        () => _i14.UpdateFeedDetailsUsecase(gh<_i5.FeedVideoRepository>()));
+    gh.factory<_i15.VideoFeedBloc>(() => _i15.VideoFeedBloc(
           gh<_i7.GetFeedDetailsUsecase>(),
-          gh<_i13.UpdateFeedDetailsUsecase>(),
+          gh<_i14.UpdateFeedDetailsUsecase>(),
         ));
-    gh.lazySingleton<_i15.CredentialLoginUsecase>(
-        () => _i15.CredentialLoginUsecase(gh<_i10.LoginRepository>()));
-    gh.lazySingleton<_i16.GoogleLoginUsecase>(
-        () => _i16.GoogleLoginUsecase(gh<_i10.LoginRepository>()));
-    gh.factory<_i17.LoginBloc>(() => _i17.LoginBloc(
-          gh<_i16.GoogleLoginUsecase>(),
-          gh<_i15.CredentialLoginUsecase>(),
+    gh.lazySingleton<_i16.CredentialLoginUsecase>(
+        () => _i16.CredentialLoginUsecase(gh<_i10.LoginRepository>()));
+    gh.lazySingleton<_i17.GoogleLoginUsecase>(
+        () => _i17.GoogleLoginUsecase(gh<_i10.LoginRepository>()));
+    gh.factory<_i18.LoginBloc>(() => _i18.LoginBloc(
+          gh<_i17.GoogleLoginUsecase>(),
+          gh<_i16.CredentialLoginUsecase>(),
           gh<_i12.SignUpUsecase>(),
         ));
     return this;
   }
 }
 
-class _$RegisterModule extends _i18.RegisterModule {}
+class _$RegisterModule extends _i19.RegisterModule {}

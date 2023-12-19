@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_validator/form_validator.dart';
+import 'package:lookup/core/route/app_router.gr.dart';
 import 'package:lookup/enum/the_states.dart';
 import 'package:lookup/features/app/bloc/app_profile_bloc.dart';
 import 'package:lookup/features/common/clipper/top_downward_curve_clipper.dart';
@@ -53,8 +54,9 @@ class _LoginScreenState extends State<LoginScreen> {
             Navigator.pop(context);
             BlocProvider.of<AppProfileBloc>(context)
                 .add(AddUserDetails(user: state.user));
-            OverlayHelper.displayOverlay(
+            OverlayHelper.showOverlay(
               context,
+              routePage: const PreloaderRoute(),
             );
           } else if (state.theStates == TheStates.loadng) {
             UiHelper.showloaderdialog(context);

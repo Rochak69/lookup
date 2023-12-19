@@ -17,7 +17,7 @@ import 'package:lookup/features/login/presentation/screens/login_screen.dart'
     as _i2;
 import 'package:lookup/features/preloader/presentation/preloader_screen.dart'
     as _i3;
-import 'package:lookup/features/splash/splash_screen.dart' as _i4;
+import 'package:lookup/features/splash/screen/splash_screen.dart' as _i4;
 import 'package:lookup/features/video_page/presentation/screen/video_screen.dart'
     as _i5;
 

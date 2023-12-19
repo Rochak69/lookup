@@ -1,15 +1,14 @@
 import 'dart:async';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:lookup/core/route/app_router.gr.dart';
 import 'package:lookup/features/common/clipper/bottom_curve_clipper.dart';
 import 'package:lookup/res/colors.dart';
 
 class OverlayBanner extends StatefulWidget {
-  const OverlayBanner({super.key, this.onBannerDismissed});
+  const OverlayBanner({super.key, this.onBannerDismissed, this.routePage});
 
   final VoidCallback? onBannerDismissed;
+  final PageRouteInfo? routePage;
 
   @override
   State<OverlayBanner> createState() => _OverlayBannerState();
@@ -69,8 +68,8 @@ class _OverlayBannerState extends State<OverlayBanner>
       animationCompleted = true;
       setState(() {});
     });
-    if (mounted) {
-      unawaited(AutoRouter.of(context).push(const PreloaderRoute()));
+    if (mounted && widget.routePage != null) {
+      unawaited(AutoRouter.of(context).push(widget.routePage!));
     }
 
     await Future.delayed(
