@@ -1,15 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lookup/core/route/app_router.gr.dart';
-import 'package:lookup/features/app/bloc/app_profile_bloc.dart';
 import 'package:lookup/features/common/clipper/top_upward_curve_clipper.dart';
 import 'package:lookup/features/common/widgets/app_scaffold.dart';
 import 'package:lookup/features/common/widgets/vertical_spacing.dart';
 import 'package:lookup/features/preloader/data/preloader_list.dart';
 import 'package:lookup/features/preloader/presentation/widgets/selectable_interest.dart';
+import 'package:lookup/features/preloader/presentation/widgets/welcome_user.dart';
 import 'package:lookup/res/app_images.dart';
 import 'package:lookup/res/colors.dart';
 
@@ -67,28 +65,7 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
                             fontWeight: FontWeight.w500,
                           ),
                         )
-                      : BlocBuilder<AppProfileBloc, AppProfileState>(
-                          builder: (context, state) {
-                            return Row(
-                              children: [
-                                Expanded(
-                                  child: Center(
-                                    child: Text(
-                                      'welcome ${state.user?.name ?? 'User'}',
-                                      style: TextStyle(
-                                        fontSize: 32.sp,
-                                        color: AppColors.white,
-                                        overflow: TextOverflow.ellipsis,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                        )
-                          .animate(delay: const Duration(milliseconds: 1000))
-                          .fadeIn(),
+                      : const WelcomeUser(),
                   VerticalSpacing(12.h),
                 ],
               ),
@@ -138,38 +115,6 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
                         ),
                       ),
                       VerticalSpacing(12.h),
-                      Row(
-                        children: [
-                          const Spacer(),
-                          InkWell(
-                            onTap: () {
-                              AutoRouter.of(context).push(const HomeRoute());
-                            },
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 16.w,
-                                vertical: 4.h,
-                              ),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    'Skip',
-                                    style: TextStyle(
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.primary,
-                                    ),
-                                  ),
-                                  const Icon(
-                                    Icons.arrow_right_alt,
-                                    color: AppColors.primary,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ],
                   ),
                 ),
