@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:equatable/equatable.dart';
 import 'package:injectable/injectable.dart';
 import 'package:lookup/res/app_images.dart';
@@ -15,6 +16,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     on<CompleteHeightAnimation>(_completeHeightAnimation);
     on<ShowLoginButton>(_showLoginButton);
     on<StartLogoChange>(_startLogoChange);
+    on<ChangeLogoColor>(_changeLogoColor, transformer: droppable());
   }
 
   FutureOr<void> _completeHeightAnimation(
@@ -59,5 +61,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     emit(state.copyWith(logo: AppImages.lookupWhite));
     await Future<dynamic>.delayed(const Duration(milliseconds: 160));
     emit(state.copyWith(logo: AppImages.lookupWhiteEyeOpen));
+  }
+
+  FutureOr<void> _changeLogoColor(
+    ChangeLogoColor event,
+    Emitter<SplashState> emit,
+  ) {
+    emit(state.copyWith(changeLogoColor: true));
   }
 }

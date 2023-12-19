@@ -61,6 +61,12 @@ class _SplashScreenState extends State<SplashScreen>
           curve: Curves.easeInOut,
         ),
       );
+      _heightController.addListener(() {
+        if ((_heightAnimation?.value ?? 0) >
+            MediaQuery.of(context).size.height / 2) {
+          BlocProvider.of<SplashBloc>(context).add(ChangeLogoColor());
+        }
+      });
 
       _playAnimation();
     });
@@ -112,10 +118,7 @@ class _SplashScreenState extends State<SplashScreen>
                         ),
                       ),
                     ),
-              SplashLookupLogo(
-                heightAnimation: _heightAnimation,
-                heightController: _heightController,
-              ),
+              const SplashLookupLogo(),
               const BlueLeftToRightOverlay(),
               const TopAnimatedLoginButton(),
             ],
