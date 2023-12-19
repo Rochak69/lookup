@@ -19,7 +19,9 @@ $ flutter run --flavor staging --target lib/main_staging.dart
 
 # Production
 $ flutter run --flavor production --target lib/main_production.dart
-```
+
+# Build APK
+*To build apk replace the "run" on above commands with build apk
 
 _\*Lookup works on iOS, Android.
 
