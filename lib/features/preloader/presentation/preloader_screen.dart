@@ -7,6 +7,7 @@ import 'package:lookup/features/common/widgets/app_scaffold.dart';
 import 'package:lookup/features/common/widgets/vertical_spacing.dart';
 import 'package:lookup/features/preloader/data/preloader_list.dart';
 import 'package:lookup/features/preloader/presentation/widgets/selectable_interest.dart';
+import 'package:lookup/features/preloader/presentation/widgets/skip_button.dart';
 import 'package:lookup/features/preloader/presentation/widgets/welcome_user.dart';
 import 'package:lookup/res/app_images.dart';
 import 'package:lookup/res/colors.dart';
@@ -115,6 +116,7 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
                         ),
                       ),
                       VerticalSpacing(12.h),
+                      const SkipButton()
                     ],
                   ),
                 ),
