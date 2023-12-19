@@ -17,8 +17,9 @@ class WelcomeUser extends StatelessWidget {
             Expanded(
               child: Center(
                 child: Text(
-                  'welcome ${state.user?.name ?? 'User'}',
+                  'Welcome ${state.user?.name ?? 'User'}',
                   maxLines: 2,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 32.sp,
                     color: AppColors.white,
