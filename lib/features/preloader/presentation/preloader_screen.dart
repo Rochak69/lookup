@@ -116,7 +116,7 @@ class _PreloaderScreenState extends State<PreloaderScreen> {
                         ),
                       ),
                       VerticalSpacing(12.h),
-                      const SkipButton()
+                      const SkipButton(),
                     ],
                   ),
                 ),

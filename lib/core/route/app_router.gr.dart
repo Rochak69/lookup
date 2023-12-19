@@ -10,7 +10,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:flutter/material.dart' as _i8;
-import 'package:lookup/features/homepage/data/feed_list.dart' as _i7;
 import 'package:lookup/features/homepage/presentation/screens/home_screen.dart'
     as _i1;
 import 'package:lookup/features/login/presentation/screens/login_screen.dart'
@@ -18,6 +17,7 @@ import 'package:lookup/features/login/presentation/screens/login_screen.dart'
 import 'package:lookup/features/preloader/presentation/preloader_screen.dart'
     as _i3;
 import 'package:lookup/features/splash/splash_screen.dart' as _i4;
+import 'package:lookup/features/homepage/data/all_feeds_data.dart' as _i7;
 import 'package:lookup/features/video_page/presentation/screen/video_screen.dart'
     as _i5;
 
@@ -123,7 +123,7 @@ class SplashRoute extends _i6.PageRouteInfo<void> {
 /// [_i5.VideoScreen]
 class VideoRoute extends _i6.PageRouteInfo<VideoRouteArgs> {
   VideoRoute({
-    required _i7.FeedModel feed,
+    required _i7.FeedData feed,
     _i8.Key? key,
     List<_i6.PageRouteInfo>? children,
   }) : super(
@@ -147,7 +147,7 @@ class VideoRouteArgs {
     this.key,
   });
 
-  final _i7.FeedModel feed;
+  final _i7.FeedData feed;
 
   final _i8.Key? key;
 

@@ -7,7 +7,7 @@ sealed class VideoFeedEvent {
 class LikeShareEvent extends VideoFeedEvent {
   LikeShareEvent({required this.feed, required this.userFeedIntereaction});
 
-  final FeedModel feed;
+  final FeedData feed;
 
   final UserFeedIntereaction userFeedIntereaction;
 }

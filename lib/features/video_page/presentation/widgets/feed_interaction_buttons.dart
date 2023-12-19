@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookup/enum/the_states.dart';
 import 'package:lookup/features/common/widgets/vertical_spacing.dart';
-import 'package:lookup/features/homepage/data/feed_list.dart';
+import 'package:lookup/features/homepage/data/all_feeds_data.dart';
 import 'package:lookup/features/video_page/enum/user_feed_intereaction.dart';
 import 'package:lookup/features/video_page/presentation/bloc/video_feed_bloc.dart';
 import 'package:lookup/features/video_page/presentation/bloc/video_feed_state.dart';
@@ -14,7 +14,7 @@ import 'package:lookup/utils/ui_helper.dart';
 
 class FeedInteractionButtons extends StatelessWidget {
   const FeedInteractionButtons({required this.feed, super.key});
-  final FeedModel feed;
+  final FeedData feed;
 
   @override
   Widget build(BuildContext context) {

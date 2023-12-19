@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
+
 import 'package:lookup/enum/the_states.dart';
-import 'package:lookup/features/homepage/data/feed_list.dart';
+import 'package:lookup/features/homepage/data/all_feeds_data.dart';
+import 'package:lookup/features/video_page/data/model/feed_video_model.dart';
 import 'package:lookup/features/video_page/domain/usecase/get_feed_details_usecase.dart';
 import 'package:lookup/features/video_page/domain/usecase/update_feed_usecase.dart';
 import 'package:lookup/features/video_page/enum/user_feed_intereaction.dart';
@@ -68,7 +70,7 @@ class VideoFeedBloc extends Bloc<VideoFeedEvent, VideoFeedState> {
         emit(
           state.copyWith(
             theStates: TheStates.sucess,
-            likeShareCount: r,
+            likeShareCount: r ?? FeedVideoModel(feedId: event.feedId),
           ),
         );
       },

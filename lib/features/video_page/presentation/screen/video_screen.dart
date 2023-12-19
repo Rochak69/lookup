@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lookup/features/common/widgets/app_scaffold.dart';
-import 'package:lookup/features/homepage/data/feed_list.dart';
+import 'package:lookup/features/homepage/data/all_feeds_data.dart';
 import 'package:lookup/features/homepage/presentation/widgets/app_bottom_navigation.dart';
 import 'package:lookup/features/video_page/presentation/bloc/video_feed_bloc.dart';
+import 'package:lookup/features/video_page/presentation/bloc/video_feed_state.dart';
 import 'package:lookup/features/video_page/presentation/widgets/feed_caption.dart';
+import 'package:lookup/features/video_page/presentation/widgets/feed_id.dart';
 import 'package:lookup/features/video_page/presentation/widgets/feed_interaction_buttons.dart';
 import 'package:lookup/features/video_page/presentation/widgets/following_for_you_tabs.dart';
+import 'package:lookup/res/colors.dart';
 
 @RoutePage()
 class VideoScreen extends StatefulWidget {
   const VideoScreen({required this.feed, super.key});
-  final FeedModel feed;
+  final FeedData feed;
 
   @override
   State<VideoScreen> createState() => _VideoScreenState();
@@ -46,6 +49,7 @@ class _VideoScreenState extends State<VideoScreen> {
             children: [
               const FollowingForYouTabs(),
               const Spacer(),
+              const FeedID(),
               FeedInteractionButtons(feed: widget.feed),
               FeedCaption(
                 feedModel: widget.feed,
