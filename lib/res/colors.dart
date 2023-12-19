@@ -8,6 +8,10 @@ class AppColors {
   static const Color buttonShadow = Color.fromRGBO(0, 0, 0, 0.25);
   static const Color black = Color(0xff000000);
   static const Color yellow = Colors.yellow;
+  static const MaterialColor primary = MaterialColor(
+    0xFF1D67DD,
+    {},
+  );
 
   static MaterialColor gray = const MaterialColor(
     0xff475467,
@@ -41,10 +45,5 @@ class AppColors {
       300: Color(0xfffec84b),
       500: Color(0xffF79009),
     },
-  );
-
-  static const MaterialColor primary = MaterialColor(
-    0xFF1D67DD,
-    {},
   );
 }
