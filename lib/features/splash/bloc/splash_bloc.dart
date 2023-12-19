@@ -39,22 +39,22 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   ) async {
     emit(state.copyWith(logo: AppImages.lookupClose));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 220));
     emit(state.copyWith(logo: AppImages.lookupOpenOne));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 200));
     emit(state.copyWith(logo: AppImages.lookupOpenTwo));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 200));
     emit(state.copyWith(logo: AppImages.lookupOpenThree));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 200));
     emit(state.copyWith(logo: AppImages.lookupOpenFour));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 200));
     emit(state.copyWith(logo: AppImages.lookupSmileOne));
 
-    await Future<dynamic>.delayed(const Duration(milliseconds: 190));
+    await Future<dynamic>.delayed(const Duration(milliseconds: 200));
     emit(state.copyWith(logo: AppImages.lookupSmileTwo));
   }
 
