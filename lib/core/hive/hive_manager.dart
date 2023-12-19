@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:lookup/core/hive/app_hive_box.dart';
-// ignore: unused_import
-import 'package:lookup/features/homepage/data/feed_list.dart';
-import 'package:lookup/features/video_page/data/model/like_share_count_model.dart';
+import 'package:lookup/features/video_page/data/model/feed_video_model.dart';
 import 'package:lookup/features/video_page/domain/entity/feed_video_entity.dart';
 
 class HiveManager {
@@ -20,11 +18,11 @@ class HiveManager {
   }
 
   void _registerAdapters() {
-    Hive.registerAdapter(LikeShareEntityAdapter());
+    Hive.registerAdapter(FeedVideoEntityAdapter());
   }
 
   Future<void> _openBoxes() async {
-    await Hive.openBox<LikeShareCount?>(
+    await Hive.openBox<FeedVideoModel?>(
       AppHiveBox.likeShareCount,
     );
   }
@@ -33,7 +31,7 @@ class HiveManager {
     try {
       await Future.wait(
         [
-          Hive.box<LikeShareCount?>(AppHiveBox.likeShareCount).clear(),
+          Hive.box<FeedVideoModel?>(AppHiveBox.likeShareCount).clear(),
         ],
       );
     } catch (e) {

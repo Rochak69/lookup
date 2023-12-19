@@ -14,7 +14,7 @@ class FeedVideoRepositoryImpl extends FeedVideoRepository {
   final FeedVideoLocalSource localSource;
 
   @override
-  Either<AppError, LikeShareEntity?> getFeedDetails({required int feedId}) {
+  Either<AppError, FeedVideoEntity?> getFeedDetails({required int feedId}) {
     try {
       return right(localSource.getFeedDetails(feedId: feedId));
     } catch (e) {
@@ -23,7 +23,7 @@ class FeedVideoRepositoryImpl extends FeedVideoRepository {
   }
 
   @override
-  Either<AppError, LikeShareEntity?> updateFeedDetails({
+  Either<AppError, FeedVideoEntity?> updateFeedDetails({
     required int feedId,
     required UserFeedIntereaction userFeedIntereaction,
   }) {

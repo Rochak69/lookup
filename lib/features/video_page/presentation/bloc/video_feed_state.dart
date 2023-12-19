@@ -13,12 +13,12 @@ class VideoFeedState extends Equatable {
   final TheStates theStates;
   final String? errorMessage;
 
-  final LikeShareEntity? likeShareCount;
+  final FeedVideoEntity? likeShareCount;
 
   VideoFeedState copyWith({
     TheStates? theStates,
     String errorMessage = AppConstants.errorMessage,
-    LikeShareEntity? likeShareCount,
+    FeedVideoEntity? likeShareCount,
   }) {
     return VideoFeedState(
       theStates: theStates ?? this.theStates,

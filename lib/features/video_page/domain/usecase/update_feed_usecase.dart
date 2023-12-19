@@ -17,12 +17,12 @@ class UpdateFeedDetailsParam {
 
 @lazySingleton
 class UpdateFeedDetailsUsecase
-    extends SynchronousUseCase<LikeShareEntity?, UpdateFeedDetailsParam> {
+    extends SynchronousUseCase<FeedVideoEntity?, UpdateFeedDetailsParam> {
   UpdateFeedDetailsUsecase(this.repository);
 
   final FeedVideoRepository repository;
   @override
-  Either<AppError, LikeShareEntity?> call(UpdateFeedDetailsParam param) {
+  Either<AppError, FeedVideoEntity?> call(UpdateFeedDetailsParam param) {
     return repository.updateFeedDetails(
       feedId: param.id,
       userFeedIntereaction: param.userFeedIntereaction,

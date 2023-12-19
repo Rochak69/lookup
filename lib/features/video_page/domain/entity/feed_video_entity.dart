@@ -3,8 +3,8 @@ import 'package:lookup/core/hive/app_hive_type_id.dart';
 part 'feed_video_entity.g.dart';
 
 @HiveType(typeId: AppHiveTypeId.likeShareCount)
-class LikeShareEntity {
-  LikeShareEntity({
+class FeedVideoEntity {
+  FeedVideoEntity({
     this.feedId,
     this.like,
     this.share,
