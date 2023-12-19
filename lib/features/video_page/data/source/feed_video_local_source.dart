@@ -23,14 +23,14 @@ class FeedVideoLocalSource {
     if (userFeedIntereaction == UserFeedIntereaction.like) {
       likeShareCount = FeedVideoModel(
         feedId: feedId,
-        like: likeShareCount?.like == 1 ? 0 : 1,
+        like: (likeShareCount?.like ?? 0) + 1,
         share: likeShareCount?.share,
       );
     } else if (userFeedIntereaction == UserFeedIntereaction.share) {
       likeShareCount = FeedVideoModel(
         feedId: feedId,
         like: likeShareCount?.like,
-        share: likeShareCount?.share == 1 ? 0 : 1,
+        share: (likeShareCount?.share ?? 0) + 1,
       );
     }
     box.put(feedId, likeShareCount);

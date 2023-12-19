@@ -38,7 +38,7 @@ class FeedInteractionButtons extends StatelessWidget {
                     ? '${state.likeShareCount?.like ?? 0}'
                     : '..',
                 image: AppImages.like,
-                imageColor: state.likeShareCount?.like == 1 &&
+                imageColor: (state.likeShareCount?.like ?? 0) > 0 &&
                         state.theStates == TheStates.sucess
                     ? AppColors.error
                     : AppColors.white,
