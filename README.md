@@ -24,9 +24,6 @@ $ flutter run --flavor production --target lib/main_production.dart
 *To build apk replace the "run" on above commands with build apk
 ```
 
-
-_\*Lookup works on iOS, Android.
-
 ## Note
 - This project follows clean architecture
 - Clean architecture: https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/ , https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
@@ -34,9 +31,9 @@ _\*Lookup works on iOS, Android.
 - This project uses very_good_analysis for lints
 
 ## Completed tasks
-All of the assesment tasks has been completed including the optional tasks
+All of the tasks has been completed including the optional tasks
 - Responsiveness
-- Statemanagent with Bloc
+- State managent with Bloc
 - Splash Screen with animations
 - Login Screen with animations
 - Google sign in functionality
