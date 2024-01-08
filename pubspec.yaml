@@ -21,7 +21,7 @@ dependencies:
   flutter_displaymode: ^0.6.0
   flutter_screenutil: ^5.9.0
   form_validator: ^2.1.1
-  get_it: ^7.6.4
+  get_it: ^7.6.6
   google_fonts: ^6.1.0
   google_sign_in: ^6.2.1
   hive: ^2.2.3
